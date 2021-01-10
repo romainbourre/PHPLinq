@@ -1,11 +1,10 @@
 <?php
 
 
-namespace PhpLinq
+namespace PhpLinq\Interfaces
 {
 
 
-    use PhpLinq\Interfaces\ICollection;
     use PhpLinq\Exceptions\InvalidQueryResultException;
     use Closure;
 

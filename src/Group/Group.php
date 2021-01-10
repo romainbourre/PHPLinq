@@ -4,8 +4,9 @@
 namespace PhpLinq\Group;
 
 
-use App\Shared\LinqCollection\Interfaces\ILinq;
-use App\Shared\LinqCollection\LinqCollection;
+use PhpLinq\Interfaces\IGroup;
+use PhpLinq\Interfaces\ILinq;
+use PhpLinq\PhpLinq;
 
 class Group implements IGroup
 {
@@ -27,7 +28,7 @@ class Group implements IGroup
     public function __construct($key, ILinq $items = null)
     {
         $this->key = $key;
-        $this->items = $items ?? new LinqCollection();
+        $this->items = $items ?? new PhpLinq();
     }
 
     /**

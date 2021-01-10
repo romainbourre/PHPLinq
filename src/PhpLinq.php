@@ -3,11 +3,14 @@
 
 namespace PhpLinq
 {
+
+
     use Closure;
+    use PhpLinq\Collections\ListCollection;
     use PhpLinq\Exceptions\InvalidQueryResultException;
     use PhpLinq\Group\Group;
-    use Interfaces\ICollection;
-    use Interfaces\ListCollection;
+    use PhpLinq\Interfaces\ICollection;
+    use PhpLinq\Interfaces\ILinq;
 
     class PhpLinq extends ListCollection implements ILinq
     {

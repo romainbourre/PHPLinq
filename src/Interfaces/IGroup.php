@@ -1,10 +1,9 @@
 <?php
 
 
-namespace PhpLinq\Group
+namespace PhpLinq\Interfaces
 {
 
-    use PhpLinq\ILinq;
 
     interface IGroup
     {
