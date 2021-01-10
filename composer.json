@@ -1,0 +1,24 @@
+{
+    "name": "romainbourre/php-linq",
+    "version": "0.0.0",
+    "description": "Provide a syntax request to browse list with LINQ concept",
+    "type": "Library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Romain Bourré",
+            "email": "romain.bourre@me.com",
+            "homepage": "https://romainbourre.fr",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PhpLinq\\": "src/"
+        }
+    },
+    "minimum-stability": "beta",
+    "require": {
+        "php": "^7.4"
+    }
+}
