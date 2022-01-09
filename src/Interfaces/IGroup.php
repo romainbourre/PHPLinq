@@ -11,7 +11,7 @@ namespace PhpLinq\Interfaces
          * Get key of group
          * @return mixed
          */
-        public function getKey();
+        public function getKey(): mixed;
 
         /**
          * Get items list of group

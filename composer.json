@@ -1,6 +1,6 @@
 {
     "name": "romainbourre/php-linq",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Provide a syntax request to browse list with LINQ concept",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -19,6 +19,6 @@
     },
     "minimum-stability": "beta",
     "require": {
-        "php": ">=7.4"
+        "php": ">=8.1"
     }
 }

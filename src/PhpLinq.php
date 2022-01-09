@@ -6,6 +6,7 @@ namespace PhpLinq
 
 
     use Closure;
+    use JetBrains\PhpStorm\Pure;
     use PhpLinq\Collections\ListCollection;
     use PhpLinq\Exceptions\InvalidQueryResultException;
     use PhpLinq\Group\Group;
@@ -69,7 +70,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function first(Closure $closure = null)
+        public final function first(Closure $closure = null): mixed
         {
             if (($result = $this->firstOrNull($closure)) === null)
             {
@@ -82,7 +83,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function firstOrNull(Closure $closure = null)
+        public final function firstOrNull(Closure $closure = null): mixed
         {
             if ($closure == null)
             {
@@ -148,7 +149,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function last(Closure $closure = null)
+        public final function last(Closure $closure = null): mixed
         {
             if (($result = $this->lastOrNull($closure)) == null)
             {
@@ -161,7 +162,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function lastOrNull(Closure $closure = null)
+        public final function lastOrNull(Closure $closure = null): mixed
         {
             if ($closure == null)
             {
@@ -197,7 +198,7 @@ namespace PhpLinq
             {
                 if (is_iterable($select))
                 {
-                    $select = is_object($select) ? $select->toArray() : $select;
+                    $select = is_a($select, ILinq::class) ? $select->toArray() : $select;
                     $result = array_merge($result, $select);
                     continue;
                 }
@@ -210,7 +211,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function single(Closure $closure = null)
+        public final function single(Closure $closure = null): mixed
         {
             if (($result = $this->singleOrNull($closure)) == null)
             {
@@ -223,7 +224,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
-        public final function singleOrNull(Closure $closure = null)
+        public final function singleOrNull(Closure $closure = null): mixed
         {
             if ($closure == null)
             {
@@ -258,6 +259,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
+        #[Pure]
         public final static function fromArray(array $elements): ILinq
         {
             $collection = new PhpLinq();
@@ -268,6 +270,7 @@ namespace PhpLinq
         /**
          * @inheritDoc
          */
+        #[Pure]
         public final static function from(ICollection $collection): ILinq
         {
             $newCollection = new PhpLinq();

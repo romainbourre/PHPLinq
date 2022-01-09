@@ -4,6 +4,7 @@ namespace PhpLinq\Collections
 {
 
     use Iterator;
+    use JetBrains\PhpStorm\Pure;
     use PhpLinq\Interfaces\ICollection;
 
     class ListCollection implements Iterator, ICollection
@@ -27,7 +28,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function current()
+        public function current(): mixed
         {
             return $this->items[$this->position];
         }
@@ -51,7 +52,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function valid()
+        public function valid(): bool
         {
             return isset($this->items[$this->position]);
         }
@@ -59,7 +60,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function rewind()
+        public function rewind(): void
         {
             $this->position = 0;
         }
@@ -67,7 +68,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function add($element): bool
+        public function add(mixed $element): bool
         {
             $this->items[] = $element;
 
@@ -96,7 +97,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function contains($element): bool
+        public function contains(mixed $element): bool
         {
             return in_array($element, $this->items, true);
         }
@@ -112,7 +113,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function get(int $key)
+        public function get(int $key): mixed
         {
             return $this->items[$key];
         }
@@ -128,7 +129,7 @@ namespace PhpLinq\Collections
         /**
          * @inheritDoc
          */
-        public function remove($element): bool
+        public function remove(mixed $element): bool
         {
             $key = array_search($element, $this->items, true);
 
@@ -173,6 +174,7 @@ namespace PhpLinq\Collections
          * @param array $elements
          * @return ICollection
          */
+        #[Pure]
         public static function fromArray(array $elements): ICollection
         {
             $collection = new ListCollection();
@@ -185,6 +187,7 @@ namespace PhpLinq\Collections
          * @param ICollection $collection
          * @return ICollection
          */
+        #[Pure]
         public static function from(ICollection $collection): ICollection
         {
             $newCollection = new ListCollection();

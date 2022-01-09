@@ -13,7 +13,7 @@ class Group implements IGroup
     /**
      * @var mixed key of group
      */
-    private $key;
+    private mixed $key;
 
     /**
      * @var ILinq<mixed> list of items
@@ -25,7 +25,7 @@ class Group implements IGroup
      * @param mixed $key
      * @param ILinq<mixed> | null $items
      */
-    public function __construct($key, ILinq $items = null)
+    public function __construct(mixed $key, ILinq $items = null)
     {
         $this->key = $key;
         $this->items = $items ?? new PhpLinq();
@@ -34,7 +34,7 @@ class Group implements IGroup
     /**
      * @inheritDoc
      */
-    public function getKey()
+    public function getKey(): mixed
     {
         return $this->key;
     }
@@ -50,7 +50,7 @@ class Group implements IGroup
     /**
      * @inheritDoc
      */
-    public function addItem($item): ILinq
+    public function addItem(mixed $item): ILinq
     {
         $this->items->add($item);
         return $this->items;

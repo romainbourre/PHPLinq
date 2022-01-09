@@ -14,17 +14,17 @@ namespace PhpLinq\Interfaces
          * @param mixed $element
          * @return bool
          */
-        public function add($element): bool;
+        public function add(mixed $element): bool;
 
         /**
-         * Adds all of the elements in the specified collection to this collection.
+         * Adds all the elements in the specified collection to this collection.
          * @param ICollection $collection
          * @return bool
          */
         public function addAll(ICollection $collection): bool;
 
         /**
-         * Removes all of the elements from this collection.
+         * Removes all the elements from this collection.
          */
         public function clear(): void;
 
@@ -46,7 +46,7 @@ namespace PhpLinq\Interfaces
          * @param int $key
          * @return mixed|null
          */
-        public function get(int $key);
+        public function get(int $key): mixed;
 
         /**
          * Returns true if this collection contains no elements.
@@ -59,7 +59,7 @@ namespace PhpLinq\Interfaces
          * @param mixed $element
          * @return bool
          */
-        public function remove($element): bool;
+        public function remove(mixed $element): bool;
 
         /**
          * Removes all of this collection's elements that are also contained in the specified collection.
@@ -69,7 +69,7 @@ namespace PhpLinq\Interfaces
         public function removeAll(ICollection $elements): bool ;
 
         /**
-         * Returns an array containing all of the elements in this collection.
+         * Returns an array containing all the elements in this collection.
          * @return array
          */
         public function toArray(): array;
