@@ -37,7 +37,7 @@ namespace PhpLinq\Interfaces
          * @return mixed
          * @throws InvalidQueryResultException
          */
-        public function first(Closure $closure = null);
+        public function first(Closure $closure = null): mixed;
 
         /**
          * Execute function for each item of list
@@ -50,7 +50,7 @@ namespace PhpLinq\Interfaces
          * @param Closure|null $closure
          * @return mixed
          */
-        public function firstOrNull(Closure $closure = null);
+        public function firstOrNull(Closure $closure = null): mixed;
 
         /**
          * Group elements of array by selector
@@ -73,14 +73,14 @@ namespace PhpLinq\Interfaces
          * @return mixed
          * @throws InvalidQueryResultException
          */
-        public function last(Closure $closure = null);
+        public function last(Closure $closure = null): mixed;
 
         /**
          * Returns the last element of a sequence, or a null value if no element is found.
          * @param Closure|null $closure
          * @return mixed
          */
-        public function lastOrNull(Closure $closure = null);
+        public function lastOrNull(Closure $closure = null): mixed;
 
         /**
          * Projects each element of a sequence into a new form.
@@ -103,7 +103,7 @@ namespace PhpLinq\Interfaces
          * @return mixed
          * @throws InvalidQueryResultException
          */
-        public function single(Closure $closure = null);
+        public function single(Closure $closure = null): mixed;
 
         /**
          * Returns a single, specific element of a sequence, or a null value if that element is not found.
@@ -111,7 +111,7 @@ namespace PhpLinq\Interfaces
          * @return mixed
          * @throws InvalidQueryResultException
          */
-        public function singleOrNull(Closure $closure = null);
+        public function singleOrNull(Closure $closure = null): mixed;
 
         /**
          * Filters a sequence of values based on a predicate.
