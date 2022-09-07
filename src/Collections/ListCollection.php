@@ -132,14 +132,10 @@ namespace PhpLinq\Collections
         public function remove(mixed $element): bool
         {
             $key = array_search($element, $this->items, true);
-
-            if ($key == false)
-            {
+            if ($key === false) {
                 return false;
             }
-
             unset($this->items[$key]);
-
             return true;
         }
 
