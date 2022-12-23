@@ -68,7 +68,7 @@ namespace PhpLinq\Interfaces
         public function join(ILinq $list): ILinq;
 
         /**
-         * Returns the last element of a sequence.
+         * Return the last element of a sequence.
          * @param Closure|null $closure
          * @return mixed
          * @throws InvalidQueryResultException
@@ -76,11 +76,19 @@ namespace PhpLinq\Interfaces
         public function last(Closure $closure = null): mixed;
 
         /**
-         * Returns the last element of a sequence, or a null value if no element is found.
+         * Return the last element of a sequence, or a null value if no element is found.
          * @param Closure|null $closure
          * @return mixed
          */
         public function lastOrNull(Closure $closure = null): mixed;
+
+        /**
+         * Sort the elements of list by the given selector.
+         * If no selector is given, the list will be sorted by the default sort function.
+         * @param ?Closure $closure
+         * @return ILinq
+         */
+        public function orderBy(?Closure $closure = null): ILinq;
 
         /**
          * Projects each element of a sequence into a new form.
