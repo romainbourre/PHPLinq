@@ -180,6 +180,21 @@ namespace PhpLinq
         }
 
         /**
+         * @inheritdoc
+         */
+        public function orderBy(?Closure $closure = null): ILinq
+        {
+            $itemsCopy = array($this->items);
+            if ($closure == null) {
+                sort($itemsCopy);
+            }
+            else {
+                usort($itemsCopy, $closure);
+            }
+            return PhpLinq::fromArray($itemsCopy);
+        }
+
+        /**
          * @inheritDoc
          */
         public final function select(Closure $closure): ILinq
